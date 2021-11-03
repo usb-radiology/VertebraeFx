@@ -1,4 +1,5 @@
 # VertebraeFx
+<<<<<<< HEAD
  
 This contains the model, test samples and code to run the pipeline to detect 
 vertebrae fractures.
@@ -25,4 +26,8 @@ git clone https://github.com/usb-radiology/VertebraeFx.git
 ```shell
 bash example_usage.sh
 ```
+=======
+
+Here the code and model code of the Paper "Automated Fracture Detection in CT Scans of the Lumbar Spine using Deep Learning" from Glessgen et. al. will be published once the paper is published. Stay tuned.
+>>>>>>> 2c1b68bc11572a41e829d2ed93d1436969bc9d99
 
