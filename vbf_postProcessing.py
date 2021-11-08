@@ -10,7 +10,7 @@ import argparse
 
 
 def rename(mask, hxyz):
-    mask = img>0
+    mask = np.squeeze(img>0)
     se = np.ones(np.ceil(2/hxyz).astype(int))
     mask=ndimage.binary_erosion(mask, se)
     mask=morphology.remove_small_objects(mask,min_size=1500/np.prod(hxyz))

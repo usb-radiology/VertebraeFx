@@ -10,7 +10,7 @@ from report.generator import report
 
 env = Env()
 env.read_env()  # read .env file, if it exists
-templates_path = env("TEMPLATES_PATH", "./report")
+templates_path = env("TEMPLATES_PATH", "/data/software/VertebraeFx/report")
 
 env = Environment(
     loader=FileSystemLoader(templates_path),

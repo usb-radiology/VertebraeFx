@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
 
 import pytorch_lightning as pl
+import torchmetrics
 import torch
 import torch.nn as nn
 from monai.networks.nets.densenet import densenet121
@@ -13,8 +14,8 @@ import timm
 class LitClassifier(pl.LightningModule):
     def __init__(self, **kwargs):
         super().__init__()
-        self.train_acc = pl.metrics.Accuracy()
-        self.valid_acc = pl.metrics.Accuracy()
+        self.train_acc = torchmetrics.Accuracy()
+        self.valid_acc = torchmetrics.Accuracy()
         self.save_hyperparameters()
         if self.hparams.model == "densenet121":
             self.backbone = densenet121(spatial_dims=2, in_channels=3, out_channels=2)
