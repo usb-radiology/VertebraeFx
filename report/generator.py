@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 from timeit import default_timer as timer
 
@@ -34,6 +35,8 @@ def report(args, env, metadata, version):
     v_mappings, overview_image = process(args.image, args.segmentation, output_dir)
     m = load_model(args.model)
     predictions = predict(m, v_mappings)
+    with open(output_dir / "predictions.json") as f:
+        f.write(json.dumps(predictions))
 
     start = timer()
     t = env.get_template("template.html")
